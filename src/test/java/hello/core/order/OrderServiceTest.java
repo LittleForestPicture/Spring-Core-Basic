@@ -28,8 +28,8 @@ public class OrderServiceTest {
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order orderA = orderService.createOrder(memberId, "itemA", 10000);
+        Order orderA = orderService.createOrder(memberId, "itemA", 20000);
 
-        Assertions.assertThat(orderA.getDiscountPrice()).isEqualTo(1000);
+        Assertions.assertThat(orderA.getDiscountPrice()).isEqualTo(2000);
     }
 }

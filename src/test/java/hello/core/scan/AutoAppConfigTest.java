@@ -1,6 +1,7 @@
 package hello.core.scan;
 
 import hello.core.AutoAppConfig;
+import hello.core.discount.DiscountPolicy;
 import hello.core.member.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ public class AutoAppConfigTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
         MemberService memberService = ac.getBean(MemberService.class);
+        System.out.println(ac.getBean(DiscountPolicy.class));
         Assertions.assertThat(memberService).isInstanceOf(MemberService.class);
     }
 
